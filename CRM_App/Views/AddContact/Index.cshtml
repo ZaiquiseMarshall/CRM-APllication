@@ -1,0 +1,36 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Add Contact";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to add contacts to your list.</p>
+
+<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+    <fieldset class="form-layout">
+
+            <label asp-for="FirstName">First Name:</label>
+            <input type="text" name="FirstName" />
+      
+            <label asp-for="LastName">Last Name:</label>
+            <input type="text" name="LastName" />
+
+            <label asp-for="Email">Email:</label>
+            <input type="text" name="Email" />
+
+            <label asp-for="Street">Street:</label>
+            <input type="text" name="Street" />
+
+            <label asp-for="City">City:</label>
+            <input type="text" name="City"  />
+
+            <label asp-for="State">State:</label>
+            <input type="text" name="State"  />
+   
+            <label asp-for="Zip">Zip:</label>
+            <input type="text" name="Zip"  />
+
+            <label>&nbsp;</label>
+            <input type="submit" value="Add" class="my-btn" />
+    </fieldset>
+</form>

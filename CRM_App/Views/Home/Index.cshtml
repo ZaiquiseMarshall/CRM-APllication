@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Contact List";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Contact List</h1>
+    <form method="get" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+        <fieldset>
+            <input id="searchBox" name="SearchString" type="text" placeholder="Search Contact By Name or Email..." />
+
+            <label>&nbsp;</label>
+            <input class="my-btn" type="submit" value="Search">
+        </fieldset>
+    </form>
+</div>
+
+<br/>
+<section class="panel-wrapper">
+@{
+    if (ViewBag.Contacts != null)
+    {
+        
+
+        foreach (Contact con in ViewBag.Contacts)
+        {
+            <div class="panel">
+                <h2>@con.FirstName @con.LastName</h2>
+                <div class="panel-content">
+                <div>
+                    <h4>Address:</h4>
+                    <p>@con.Street</p>
+                    <p>@con.City, @con.State @con.Zip </p>
+                </div>
+                <div>
+                    <h4>Email:</h4>
+                    <p>@con.Email</p>
+                </div>
+                </div>
+
+
+            </div>
+            
+        }
+        
+    }
+
+}
+</section>
